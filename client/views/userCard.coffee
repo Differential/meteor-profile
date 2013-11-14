@@ -11,8 +11,8 @@ Template.userCard.helpers
       if @profile.location
         return @profile.location
 
-  bio: ->
-    @profile.bio
+  bio: -> @profile.bio
+  url: -> @profile.url
+  googlePlusUrl: -> @profile.googlePlusUrl
+  twitterHandle: -> @profile.twitterHandle
 
-  url: ->
-    @profile.url

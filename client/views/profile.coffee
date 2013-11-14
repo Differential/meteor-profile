@@ -27,6 +27,12 @@ Template.profile.helpers
   url: ->
     Meteor.user().profile.url
 
+  googlePlusUrl: ->
+    Meteor.user().profile.googlePlusUrl
+
+  twitterHandle: ->
+    Meteor.user().profile.twitterHandle
+
 Template.profile.events
   'change #email': (event) ->
     Meteor.call('changeEmail', Meteor.userId(), $(event.target).val())
@@ -73,6 +79,23 @@ Template.profile.events
     Meteor.users.update(Meteor.userId(), {
       $set: {
         'profile.url': url
+      }
+    })
+
+  'change #googlePlusUrl': (event) ->
+    url = $(event.target).val()
+    if not url.match(/^http/) and not url.match(/^https/) and url isnt ''
+      url = 'http://' + url
+    Meteor.users.update(Meteor.userId(), {
+      $set: {
+        'profile.googlePlusUrl': url
+      }
+    })
+
+  'change #twitterHandle': (event) ->
+    Meteor.users.update(Meteor.userId(), {
+      $set: {
+        'profile.twitterHandle': $(event.target).val()
       }
     })
 
