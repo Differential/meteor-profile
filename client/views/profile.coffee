@@ -100,7 +100,7 @@ Template.profile.events
     })
 
   'click .done': ->
-    if Meteor.user().profile.name
+    if Meteor.user().profile.firstName
       Router.go('/')
     else
-      $('.errors').text('Name is required.')
+      $('.errors').text('First name is required.')
