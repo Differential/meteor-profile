@@ -6,10 +6,6 @@ Package.on_use(function(api) {
 
   var both = ['client', 'server'];
 
-  /**
-   * Files for client
-   */
-
    api.add_files([
     'client/views/profile.html',
     'client/views/profile.coffee',
@@ -18,9 +14,9 @@ Package.on_use(function(api) {
     'client/views/userCard.coffee'
   ], 'client');
 
-  /**
-   * Packages for client
-   */
+   api.add_files([
+    'server/methods.coffee'
+  ], 'server');
 
   api.use([
     'templating',
@@ -28,19 +24,11 @@ Package.on_use(function(api) {
     'less'
   ], 'client');
 
-  /**
-   * Packages for server and client
-   */
-
   api.use([
     'coffeescript',
     'iron-router',
     'accounts-base'
   ], both);
-
-  /**
-   * Files for server and client
-   */
 
   api.add_files([
     'router.coffee'
