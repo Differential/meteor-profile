@@ -3,8 +3,14 @@
     <h3>{{name}}</h3>
     <h4>{{subhead}}</h4>
     <p>{{bio}}</p>
-    <p><a href='{{url}}'>{{url}}</a></p>
-    <p>Google Plus: <a href='{{googlePlusUrl}}'>{{googlePlusUrl}}</a></p>
-    <p><a href='http://twitter.com/{{twitterHandle}}'>@{{twitterHandle}}</a></p>
+    {{#if url}}
+    <p><a href='{{url}}'><i class="fa fa-external-link-square"></i> {{url}}</a></p>
+    {{/if}}
+    {{#if googlePlusUrl}}
+    <p><a twitterhref='{{googlePlusUrl}}'><i class="fa fa-google-plus-square"></i> {{googlePlusUrl}}</a></p>
+    {{/if}}
+    {{#if twitterHandle}}
+    <p><a href='http://twitter.com/{{twitterHandle}}'><i class="fa fa-twitter-square"></i> @{{twitterHandle}}</a></p>
+    {{/if}}
   </div>
 </template>
