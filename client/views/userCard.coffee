@@ -1,6 +1,9 @@
 Template.userCard.helpers
   name: ->
-    "#{@profile.firstName} #{@profile.lastName}"
+    if @profile.firstName && @profile.lastName
+      "#{@profile.firstName} #{@profile.lastName}"
+    else
+      ""
 
   subhead: ->
     if @profile.organization && @profile.location
