@@ -6,14 +6,14 @@ Template.profile.rendered = ->
 
 Template.profile.helpers
   email:         -> Meteor.user().emails[0].address if Meteor.user().emails?
-  firstName:     -> Meteor.user().profile.firstName
-  lastName:      -> Meteor.user().profile.lastName
-  organization:  -> Meteor.user().profile.organization
-  location:      -> Meteor.user().profile.location
-  bio:           -> Meteor.user().profile.bio
-  url:           -> Meteor.user().profile.url
-  googlePlusUrl: -> Meteor.user().profile.googlePlusUrl
-  twitterHandle: -> Meteor.user().profile.twitterHandle
+  firstName:     -> Meteor.user().profile.firstName || ''
+  lastName:      -> Meteor.user().profile.lastName || ''
+  organization:  -> Meteor.user().profile.organization || ''
+  location:      -> Meteor.user().profile.location || ''
+  bio:           -> Meteor.user().profile.bio || ''
+  url:           -> Meteor.user().profile.url || ''
+  googlePlusUrl: -> Meteor.user().profile.googlePlusUrl || ''
+  twitterHandle: -> Meteor.user().profile.twitterHandle || ''
 
 Template.profile.events
   'click .done': ->
