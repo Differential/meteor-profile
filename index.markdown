@@ -26,3 +26,14 @@ it in the process) and pass a user to it.
 {% assign usercard = '{{> userCard}}' %}
 You can also just include `{{ usercard }}` directive to show the
 template used in the preview within your app.
+
+Make sure to pass user data through `data` in the router:
+
+```
+Router.map ->
+  @route 'home',
+    path: '/',
+    template: 'home'
+    data: ->
+      Meteor.user()
+```
