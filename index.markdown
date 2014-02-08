@@ -10,6 +10,15 @@ desc: Gives you a basic, out-of-the-box user profile page
 
 `/profile` interface to Meteor.user().profile.
 
+## Installation
+
+It can be installed through Meteorite:
+
+```
+mrt add profile
+```
+If you don't know iron-router, [you need to](https://github.com/EventedMind/iron-router#quick-start).
+
 ## Field customization
 
 All fields are hardcoded - and that's lame. Need to drive the form based
