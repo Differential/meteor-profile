@@ -11,7 +11,8 @@ Package.on_use(function(api) {
     'client/views/profile.coffee',
     'client/views/profile.less',
     'client/views/userCard.html',
-    'client/views/userCard.coffee'
+    'client/views/userCard.coffee',
+    'client/accounts.coffee'
   ], 'client');
 
    api.add_files([
