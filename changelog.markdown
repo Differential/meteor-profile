@@ -2,11 +2,15 @@
 layout: default
 username: BeDifferential
 repo: meteor-profile
-version: 0.0.7
+version: 0.0.8
 desc: Gives you a basic, out-of-the-box user profile page 
 
 ---
 # Changelog
+
+### 0.0.8
+
+* Set `/profile` route automatically if AccountsEntry is detected
 
 ### 0.0.7
 
