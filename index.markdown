@@ -1,6 +1,6 @@
 ---
 layout: default
-username: BeDifferential
+username: Differential
 repo: meteor-profile
 version: 0.0.8
 desc: Gives you a basic, out-of-the-box user profile page
