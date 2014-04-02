@@ -3,7 +3,7 @@
   "description": "Gives you a basic, out-of-the-box user profile page at `/profile`",
   "homepage": "https://github.com/Differential/meteor-profile",
   "author": "Differential (http://differential.io)",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "git": "https://github.com/Differential/meteor-profile.git",
   "packages": {
     "iron-router": {}
