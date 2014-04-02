@@ -2,11 +2,15 @@
 layout: default
 username: Differential
 repo: meteor-profile
-version: 0.0.8
-desc: Gives you a basic, out-of-the-box user profile page 
+version: 0.0.9
+desc: Gives you a basic, out-of-the-box user profile page
 
 ---
 # Changelog
+
+### 0.0.9
+
+* Remove specific iron router version
 
 ### 0.0.8
 

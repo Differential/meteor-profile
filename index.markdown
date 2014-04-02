@@ -2,7 +2,7 @@
 layout: default
 username: Differential
 repo: meteor-profile
-version: 0.0.8
+version: 0.0.9
 desc: Gives you a basic, out-of-the-box user profile page
 
 ---
