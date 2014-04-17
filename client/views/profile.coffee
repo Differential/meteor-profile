@@ -5,15 +5,15 @@ Template.profile.rendered = ->
   )
 
 Template.profile.helpers
-  email:         -> Meteor.user().emails[0].address if Meteor.user().emails?
-  firstName:     -> Meteor.user().profile.firstName
-  lastName:      -> Meteor.user().profile.lastName
-  organization:  -> Meteor.user().profile.organization
-  location:      -> Meteor.user().profile.location
-  bio:           -> Meteor.user().profile.bio
-  url:           -> Meteor.user().profile.url
-  googlePlusUrl: -> Meteor.user().profile.googlePlusUrl
-  twitterHandle: -> Meteor.user().profile.twitterHandle
+  email:         -> Meteor.user().emails[0].address if Meteor.user() and Meteor.user().emails?
+  firstName:     -> Meteor.user().profile.firstName if Meteor.user()
+  lastName:      -> Meteor.user().profile.lastName if Meteor.user()
+  organization:  -> Meteor.user().profile.organization if Meteor.user()
+  location:      -> Meteor.user().profile.location if Meteor.user()
+  bio:           -> Meteor.user().profile.bio if Meteor.user()
+  url:           -> Meteor.user().profile.url if Meteor.user()
+  googlePlusUrl: -> Meteor.user().profile.googlePlusUrl if Meteor.user()
+  twitterHandle: -> Meteor.user().profile.twitterHandle if Meteor.user()
 
 Template.profile.events
   'click .done': ->
