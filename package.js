@@ -7,6 +7,7 @@ Package.on_use(function(api) {
   var both = ['client', 'server'];
 
    api.add_files([
+    'client/profile.coffee',
     'client/views/profile.html',
     'client/views/profile.coffee',
     'client/views/profile.less',
@@ -28,6 +29,7 @@ Package.on_use(function(api) {
   api.use([
     'coffeescript',
     'iron-router',
+    'simple-form',
     'accounts-base'
   ], both);
 
@@ -35,4 +37,5 @@ Package.on_use(function(api) {
     'router.coffee'
   ], both);
 
+  api.export('MeteorProfile', ['client', 'server']);
 });
