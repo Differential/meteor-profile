@@ -8,6 +8,9 @@ Template.profile.helpers
   profileFields: ->
     MeteorProfile.settings.fields
 
+  showPreview: ->
+    MeteorProfile.settings.showPreview
+
 Template.profile.events
   'submit form': (event) ->
     event.preventDefault()

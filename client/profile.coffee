@@ -1,5 +1,6 @@
 MeteorProfile =
   settings:
+    showPreview: true
     fields: [
       {name: "firstName", required: true},
       {name: "lastName", required: true},
