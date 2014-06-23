@@ -4,45 +4,38 @@
       <div class="row">
         <div class="col col-lg-6">
           <h2>Edit Profile</h2>
-          <div class="form-group">
-            <input class="form-control" type="email" id="email" placeholder="Email" value="{{email}}">
-            <span class='errors'></span>
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" id="firstName" placeholder="First Name" value="{{firstName}}">
-            <span class='errors'></span>
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" id="lastName" placeholder="Last Name" value="{{lastName}}">
-            <span class='errors'></span>
-          </div>
-          <hr />
-          <div class="form-group">
-            <input class="form-control" type="text" id="organization" placeholder="Organization (optional)" value="{{organization}}">
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" id="location" placeholder="Location (optional)" value="{{location}}">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" type="text" id="bio" placeholder="Bio (optional)">{{bio}}</textarea>
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" id="url" placeholder="URL (optional)" value="{{url}}">
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" id="googlePlusUrl" placeholder="Google Plus URL (optional)" value="{{googlePlusUrl}}">
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" id="twitterHandle" placeholder="Twitter Handle (optional)" value="{{twitterHandle}}">
-          </div>
-          <a class='btn btn-primary done'><i class='icon-ok'></i> done</a>
+
+          <form>
+            {{#each profileFields}}
+              {{> _profileField}}
+            {{/each}}
+            {{submit_button 'Update Profile'}}
+          </form>
         </div>
 
-        <div class="col col-lg-6">
-          <h2>Preview Profile</h2>
-          {{> userCard }}
-        </div>
+        {{#if showPreview}}
+          <div class="col col-lg-6">
+            <h2>Preview Profile</h2>
+            {{> userCard }}
+          </div>
+        {{/if}}
       </div>
     </div>
   </div>
+</template>
+
+<template name="_profileField">
+  {{#if isTextField }}
+    <div class="form_group">
+      {{#with profile}}
+        {{text_field ../name type=../type required=../required hint=../hint placeholder=../placeholder afterAddon=../afterAddon class="profileField"}}
+      {{/with}}
+    </div>
+  {{/if}}
+
+  {{#if isCheckbox}}
+    <div class="checkbox">
+      {{check_box name label=label required=required}}
+    </div>
+  {{/if}}
 </template>
