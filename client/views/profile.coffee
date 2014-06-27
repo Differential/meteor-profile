@@ -80,9 +80,12 @@ Template._profileField.helpers
     Meteor.user().profile if Meteor.user()
 
   isTextField: ->
-    true
+    @type isnt 'file'
 
   isCheckbox: ->
-    false
+    @type is 'checkbox'
+
+  isFileField: ->
+    @type is 'file'
 
 

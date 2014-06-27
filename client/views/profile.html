@@ -35,7 +35,15 @@
 
   {{#if isCheckbox}}
     <div class="checkbox">
-      {{check_box name label=label required=required}}
+      {{#with profile}}
+        {{check_box name label=label required=required}}
+      {{/with}}
+    </div>
+  {{/if}}
+
+  {{#if isFileField }}
+    <div class="form_group">
+      {{> file_field object=profile field=name}}
     </div>
   {{/if}}
 </template>
