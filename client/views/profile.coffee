@@ -5,6 +5,12 @@ Template.profile.rendered = ->
   )
 
 Template.profile.helpers
+  publicUrl: ->
+    if Meteor.user() and Meteor.user().username
+      "#{AccountsEntry.settings.profileRoute}/#{Meteor.user().username}"
+    else
+      "#{AccountsEntry.settings.profileRoute}/#{Meteor.userId()}"
+
   profileFields: ->
     MeteorProfile.settings.fields
 
@@ -87,5 +93,3 @@ Template._profileField.helpers
 
   isFileField: ->
     @type is 'file'
-
-

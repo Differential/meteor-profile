@@ -13,11 +13,13 @@ Package.on_use(function(api) {
     'client/views/profile.less',
     'client/views/userCard.html',
     'client/views/userCard.coffee',
+    'client/views/public.html',
     'client/accounts.coffee'
   ], 'client');
 
    api.add_files([
-    'server/methods.coffee'
+    'server/methods.coffee',
+    'server/publications.coffee'
   ], 'server');
 
   api.use([
