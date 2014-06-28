@@ -11,6 +11,7 @@ MeteorProfile =
       {name: "googlePlusUrl", required: false},
       {name: "twitterHandle", required: false}
     ]
-  
+    publicProfile: true
+
   config: (options) ->
     @settings = _.extend(@settings, options)
