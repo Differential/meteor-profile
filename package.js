@@ -1,12 +1,16 @@
 Package.describe({
-  summary: "A package that interacts with Meteor.user().profile at /profile"
+  summary: "A package that interacts with Meteor.user().profile at /profile",
+  version: '0.0.11',
+  name: "ryw:profile",
+  git: 'https://github.com/Differential/meteor-profile'
 });
 
-Package.on_use(function(api) {
+Package.onUse(function(api) {
+  api.versionsFrom("METEOR@0.9.0");
 
   var both = ['client', 'server'];
 
-   api.add_files([
+  api.addFiles([
     'client/profile.coffee',
     'client/views/profile.html',
     'client/views/profile.coffee',
@@ -16,7 +20,7 @@ Package.on_use(function(api) {
     'client/accounts.coffee'
   ], 'client');
 
-   api.add_files([
+  api.addFiles([
     'server/methods.coffee'
   ], 'server');
 
@@ -28,12 +32,12 @@ Package.on_use(function(api) {
 
   api.use([
     'coffeescript',
-    'iron-router',
-    'simple-form',
+    'iron:router@0.9.1',
+    'joshowens:simple-form@0.1.8',
     'accounts-base'
   ], both);
 
-  api.add_files([
+  api.addFiles([
     'router.coffee'
   ], both);
 
