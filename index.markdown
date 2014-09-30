@@ -2,7 +2,7 @@
 layout: default
 username: Differential
 repo: meteor-profile
-version: 0.0.10
+version: 0.0.11
 desc: Gives you a basic, out-of-the-box user profile page
 
 ---
@@ -12,22 +12,34 @@ desc: Gives you a basic, out-of-the-box user profile page
 
 ## Installation
 
-It can be installed through Meteorite:
-
 ```
-mrt add profile
+meteor add ryw:profile
 ```
-If you don't know iron-router, [you need to](https://github.com/EventedMind/iron-router#quick-start).
 
-## Field customization
+Now head over to `/profile`.
 
-All fields are hardcoded - and that's lame. Need to drive the form based
-on a configuration, see [this issue](https://github.com/BeDifferential/meteor-profile/issues/3).
+## Field Customization
 
-In the short term, I'd say if you need custom fields, just copy files
-from this package into your app directly.
+Example configuration:
 
-## Showing profile in your app
+{% highlight javascript %}
+if (Meteor.isClient) {
+  MeteorProfile.config({
+    fields: [
+      { name: "firstName", required: true },
+      { name: "lastName", required: true },
+      { name: "organization", required: false },
+      { name: "location", required: false },
+      { name: "bio", required: false, type: 'text_area' },
+      { name: "url", required: false },
+      { name: "googlePlusUrl", required: false },
+      { name: "twitterHandle", required: false }
+    ]
+  });
+}
+{% endhighlight %}
+
+## Showing Profile In Your App
 
 To show a user profile in your app, copy the `userCard` view (renaming
 it in the process) and pass a user to it.
@@ -36,13 +48,15 @@ it in the process) and pass a user to it.
 You can also just include `{{ usercard }}` directive to show the
 template used in the preview within your app.
 
-Make sure to pass user data through `data` in the router:
+Make sure to pass user data through `data` in iron-router:
 
-```
-Router.map ->
-  @route 'home',
+{% highlight javascript %}
+Router.map(function() {
+  this.route('home', {
     path: '/',
-    template: 'home'
-    data: ->
-      Meteor.user()
-```
+    data: function() {
+      return Meteor.user();
+    }
+  });
+});
+{% endhighlight %}

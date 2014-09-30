@@ -2,11 +2,15 @@
 layout: default
 username: Differential
 repo: meteor-profile
-version: 0.0.10
+version: 0.0.11
 desc: Gives you a basic, out-of-the-box user profile page
 
 ---
 # Changelog
+
+### 0.0.11
+
+* Make compatible with Meteor 0.9.0 package system
 
 ### 0.0.10
 
