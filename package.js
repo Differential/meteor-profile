@@ -20,10 +20,6 @@ Package.onUse(function(api) {
     'client/accounts.coffee'
   ], 'client');
 
-  api.addFiles([
-    'server/methods.coffee'
-  ], 'server');
-
   api.use([
     'templating',
     'handlebars',
